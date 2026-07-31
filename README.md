@@ -2,7 +2,7 @@
 
 Skill [Claude Code](https://docs.claude.com/en/docs/claude-code) (compatible OpenCode) qui **retire les marques d'écriture IA d'un texte en français**. On lui donne un texte — collé directement ou via un chemin de fichier — et il repère puis corrige les tournures qui « sentent » le modèle de langage, pour que le rendu sonne humain.
 
-C'est un **fork francisé** de [`blader/humanizer`](https://github.com/blader/humanizer) (MIT, ~25,6k ⭐). L'original cible l'anglais ; cette adaptation réécrit la table des motifs pour le **français** : tics typographiques inversés (les guillemets « … » sont la norme ici, pas un défaut), anglicismes calqués, et formules de remplissage propres aux LLM francophones.
+C'est un **fork francisé** de [`blader/humanizer`](https://github.com/blader/humanizer) (MIT, ~32k ⭐). L'original cible l'anglais ; cette adaptation réécrit la table des motifs pour le **français** : tics typographiques inversés (les guillemets « … » sont la norme ici, pas un défaut), anglicismes calqués, et formules de remplissage propres aux LLM francophones.
 
 ## Attribution
 
@@ -10,6 +10,8 @@ C'est un **fork francisé** de [`blader/humanizer`](https://github.com/blader/hu
 > Adaptation FR © 2026 Stéphane Ferreira. Sous licence MIT — voir [`LICENSE`](./LICENSE).
 
 Les deux skills s'appuient sur le guide Wikipédia [« Signs of AI writing »](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing).
+
+Le dépôt séparé n'est pas un contournement : la question a été posée en amont ([blader/humanizer#163](https://github.com/blader/humanizer/issues/163)) et le mainteneur a tranché pour des **dépôts communautaires par langue** — chaque locale évolue ainsi à son rythme, sans empiler d'autorités concurrentes dans le skill d'origine.
 
 ## Ce qui change par rapport à l'original
 
