@@ -1,0 +1,42 @@
+name: Gitleaks
+
+# Gate secrets pour un dépôt public sans source Forgejo : rien ne scanne avant
+# le push, donc le scan se fait ici. Binaire épinglé + sha256 vérifié (pas de
+# gitleaks-action : licence exigée pour les orgs, et une action tierce de plus
+# dans la chaîne). Réf : pixelium/web#102.
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  GITLEAKS_VERSION: '8.30.1'
+  GITLEAKS_SHA256: '551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb'
+  # git = tout l'historique ; dir = arbre courant seulement (historique connu pollué)
+  GITLEAKS_MODE: git
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Installer gitleaks (épinglé, sha256 vérifié)
+        run: |
+          curl -sSfL -o gitleaks.tgz "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks.tgz" | sha256sum -c -
+          tar -xzf gitleaks.tgz gitleaks
+
+      - name: Scanner
+        run: |
+          ./gitleaks "${GITLEAKS_MODE}" . --redact --no-banner --exit-code 1 2>&1 | tee gitleaks.log
+          # Un vert ne vaut que s'il a scanné quelque chose : exiger un volume > 0 octet.
+          bytes=$(grep -oE 'scanned ~[0-9]+ bytes' gitleaks.log | grep -oE '[0-9]+' | tail -1)
+          echo "volume scanné : ${bytes:-aucun} octets"
+          test "${bytes:-0}" -gt 0
