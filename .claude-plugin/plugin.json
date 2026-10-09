@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "humanizer-fr",
+  "description": "Réécrit un texte français qui sonne IA pour qu'il se lise comme son auteur, sans changer ce qu'il dit.",
+  "version": "2.0.0",
+  "author": {
+    "name": "Stéphane Ferreira",
+    "url": "https://pixelium.win"
+  },
+  "homepage": "https://github.com/ferr079/humanizer-fr",
+  "repository": "https://github.com/ferr079/humanizer-fr",
+  "license": "MIT",
+  "keywords": ["french", "francais", "writing", "editing", "humanizer", "prose"],
+  "skills": ["./"]
+}
