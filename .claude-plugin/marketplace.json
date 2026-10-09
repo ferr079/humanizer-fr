@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "humanizer-fr",
+  "owner": {
+    "name": "Stéphane Ferreira",
+    "url": "https://pixelium.win"
+  },
+  "description": "Installer humanizer-fr comme plugin Claude Code.",
+  "plugins": [
+    {
+      "name": "humanizer-fr",
+      "source": "./",
+      "description": "Réécrit un texte français qui sonne IA pour qu'il se lise comme son auteur, sans changer ce qu'il dit.",
+      "license": "MIT",
+      "keywords": ["french", "francais", "writing", "editing", "humanizer", "prose"]
+    }
+  ]
+}
