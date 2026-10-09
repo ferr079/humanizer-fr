@@ -35,6 +35,8 @@ jobs:
 
       - name: Scanner
         run: |
+          # Sans pipefail, `| tee` avale le code de sortie de gitleaks : un job vert sur une fuite.
+          set -o pipefail
           ./gitleaks "${GITLEAKS_MODE}" . --redact --no-banner --exit-code 1 2>&1 | tee gitleaks.log
           # Un vert ne vaut que s'il a scanné quelque chose : exiger un volume > 0 octet.
           bytes=$(grep -oE 'scanned ~[0-9]+ bytes' gitleaks.log | grep -oE '[0-9]+' | tail -1)
