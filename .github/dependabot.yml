@@ -1,0 +1,11 @@
+# Version updates des actions GitHub uniquement (Renovate ne couvre que Forgejo).
+# Le binaire gitleaks est épinglé par VER= + sha256 dans le workflow : hors de portée de Dependabot, bump manuel.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    commit-message:
+      prefix: "ci"
+    open-pull-requests-limit: 3
