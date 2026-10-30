@@ -1,5 +1,9 @@
 # Journal des modifications
 
+## 2.0.1
+
+- Packaging : clé `$schema` retirée de `.claude-plugin/plugin.json`. Claude Code ne la reconnaît pas et affichait un avertissement à chaque chargement du plugin. Même correctif que l'original (`blader/humanizer#307`). `marketplace.json` garde la sienne, qui ne déclenche aucun avertissement.
+
 ## 2.0.0
 
 Rebasée sur `blader/humanizer` v3.1.0 (la 1.0.0 partait de la v2.8.0).

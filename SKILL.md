@@ -17,7 +17,7 @@ allowed-tools:
   - Glob
   - AskUserQuestion
 metadata:
-  version: "2.0.0"
+  version: "2.0.1"
   based-on: "blader/humanizer v3.1.0 (MIT, © 2025 Siqi Chen)"
   upstream: "https://github.com/blader/humanizer"
 ---
