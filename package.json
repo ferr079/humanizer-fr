@@ -1,0 +1,11 @@
+{
+  "name": "humanizer-fr",
+  "private": true,
+  "description": "Réécrit un texte français qui sonne IA pour qu'il se lise comme son auteur, sans changer ce qu'il dit.",
+  "license": "MIT",
+  "repository": "github:ferr079/humanizer-fr",
+  "keywords": ["pi-package"],
+  "pi": {
+    "skills": ["./"]
+  }
+}
