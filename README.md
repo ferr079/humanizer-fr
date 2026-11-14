@@ -32,7 +32,9 @@ C'est une adaptation, pas une traduction. Les exemples sont réécrits en franç
 - **Majuscules** : le Title Case n'existe pas en français ; seuls la première lettre d'un titre et les noms propres prennent la majuscule.
 - **Tirets** : l'incise entre tirets espacés est correcte en français, mais le skill suit la règle de l'original et n'en laisse aucun, sauf si votre propre écriture en contient.
 
-Le skill est rebasé sur `blader/humanizer` v3.1.0. Le détail des versions est dans [`CHANGELOG.md`](./CHANGELOG.md).
+Un écart de fond : depuis sa v4.0.0, l'original peut ajouter un détail précis qu'il sait vrai quand le texte est générique. Ce skill ne le fait pas. Il n'ajoute aucun fait qui ne vienne ni du texte ni de vous.
+
+Le skill est rebasé sur `blader/humanizer` v4.0.0. Le détail des versions est dans [`CHANGELOG.md`](./CHANGELOG.md).
 
 ## Installation
 
@@ -41,6 +43,12 @@ Le skill est rebasé sur `blader/humanizer` v3.1.0. Le détail des versions est 
 ```
 /plugin marketplace add ferr079/humanizer-fr
 /plugin install humanizer-fr@humanizer-fr
+```
+
+**Comme paquet pi :**
+
+```
+pi install git:github.com/ferr079/humanizer-fr
 ```
 
 **À la main :** copier `SKILL.md` dans `~/.claude/skills/humanizer-fr/` (ou dans le `.claude/skills/` d'un projet). Le fichier se suffit à lui-même.
